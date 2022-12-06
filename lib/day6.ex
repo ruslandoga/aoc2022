@@ -3,11 +3,6 @@ defmodule Day6 do
 
   defp input do
     File.read!("priv/day6.txt")
-    # File.stream!("priv/day6.txt")
-  end
-
-  defp process_input(input) do
-    input
   end
 
   @doc """
@@ -15,7 +10,7 @@ defmodule Day6 do
       1802
   """
   def part1(input \\ input()) do
-    process_input(input) |> find_marker(0)
+    find_marker(input, 0)
   end
 
   defp find_marker(<<a, b, c, d, rest::bytes>>, counter) do
@@ -35,7 +30,7 @@ defmodule Day6 do
       3551
   """
   def part2(input \\ input()) do
-    process_input(input) |> find_message(0)
+    find_message(input, 0)
   end
 
   defp find_message(<<a, b, c, d, a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, rest::bytes>>, counter) do
